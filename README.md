@@ -1,6 +1,14 @@
 <div dir="rtl" align="right">
-  
-# DoH HTTP Proxy  
+<p align="center">
+<img width="1983" height="793" alt="ChatGPT Image Jun 27, 2026, 10_26_52 PM" src="https://github.com/user-attachments/assets/ecc60009-affd-4185-8e98-5174f62f14e8" />
+</p>
+
+<p align="center">
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.14%2B-blue?logo=python&logoColor=white" alt="Python Version"></a>
+<a href="https://github.com/SAMPA-ASA/DoH-HTTP-Proxy/"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
+</p>
+
+# درباره DoH HTTP Proxy  
   
 **DoH HTTP Proxy** یک پروکسی HTTP محلی برای ویندوز است که نام دامنه‌ها را به‌جای DNS معمولی، از طریق **DNS over HTTPS (DoH)** resolve می‌کند. هدف برنامه این است که در شرایطی که پاسخ‌های DNS دستکاری، جعل، مسدود یا ناپایدار می‌شوند، اتصال  
 کاربر تا حد امکان با استفاده از پاسخ‌های معتبر و cache شده برقرار بماند.  
@@ -263,5 +271,10 @@ python doh_http_proxy.py --use-upstream-proxy --upstream-proxy http://127.0.0.1:
  یک‌بار در شرایط عادی اجرا شده باشد تا داده‌های معتبر در cache و گزارش‌ها ذخیره شوند.  
 * گزینه‌ی `insecure_doh_tls` بررسی TLS را غیرفعال می‌کند و فقط باید در شرایط خاص و با آگاهی از ریسک‌های امنیتی استفاده  
  شود.
+---
+- لینک کانال تلگرام: https://t.me/Sampa_Asa <br>
+- راه ارتباطی: https://t.me/Sampa_Asa?direct
+---
 
+به امید روزی که همه به اینترنت آزاد واقعی دست پیدا کنیم. 🕊
 </div>
