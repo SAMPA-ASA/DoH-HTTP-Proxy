@@ -48,6 +48,42 @@
   <li><code>tests/</code>: تست‌های واحد</li>
 </ul>
 
+## دیاگرام اتصال (با تنظیمات پیش‌فرض):
+```mermaid
+flowchart TB
+    subgraph MainFlow[جریان اصلی اتصال]
+        direction LR
+
+        User[کاربر<br/>مرورگر]
+        App[برنامه پراکسی محلی<br/>DoH HTTP Proxy<br/>پورت 8080]
+        HttpProxy[پراکسی واسط<br/>HTTP Proxy]
+        DoH[سرور حل دامنه<br/>DoH Server]
+        Internet[اینترنت<br/>وب‌سایت مقصد]
+
+        User -->|ارسال درخواست وب| App
+
+        App -->|درخواست حل دامنه از مسیر پراکسی| HttpProxy
+        HttpProxy -->|ارسال درخواست امن حل دامنه| DoH
+        DoH -->|برگرداندن نشانی آی‌پی دامنه| HttpProxy
+        HttpProxy -->|تحویل آی‌پی حل‌شده| App
+
+        App -->|اتصال نهایی به مقصد| Internet
+        Internet -->|دریافت پاسخ وب‌سایت| App
+    end
+
+    subgraph StorageFlow[ذخیره‌سازی و کش نتیجه]
+        direction TB
+
+        Storage[نتیجه حل دامنه]
+        Cache[کش داخلی برنامه]
+        Files[ذخیره در فایل‌های<br/>hosts<br/>resolved.txt]
+
+        Storage --> Cache
+        Storage --> Files
+    end
+
+    App -->|ثبت و نگهداری نتیجه حل دامنه| Storage
+```
 ## پیش‌نیازها
 
 برای اجرای نسخه‌ی سورس، Python و وابستگی‌های زیر لازم است:
